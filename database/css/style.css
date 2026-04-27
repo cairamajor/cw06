@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0b1220;
+  color: white;
+}
+
+.demo-card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  margin: 50px auto;
+}
+
+.demo-input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+}
+
+.demo-btn {
+  background: #22d3ee;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
