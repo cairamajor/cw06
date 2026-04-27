@@ -1,0 +1,35 @@
+-- CW-06 SQL Notes
+-- Run these commands in order inside your MySQL terminal
+
+-- Step 1: Create the employees table
+CREATE TABLE IF NOT EXISTS employees (
+  emp_id          INT AUTO_INCREMENT PRIMARY KEY,
+  emp_name        VARCHAR(100) NOT NULL,
+  job_name        VARCHAR(100) NOT NULL,
+  salary          DECIMAL(10,2) NOT NULL,
+  hire_date       DATE NOT NULL,
+  department_id   INT NOT NULL,
+  department_name VARCHAR(100) NOT NULL
+);
+
+-- Step 2: Insert starter data
+INSERT INTO employees
+  (emp_name, job_name, salary, hire_date, department_id, department_name)
+VALUES
+  ('Ana Lopez',   'Developer', 73000.00, '2025-09-15', 1, 'Engineering'),
+  ('David Kim',   'Analyst',   68000.00, '2025-11-01', 2, 'Finance'),
+  ('Sara Cole',   'Designer',  71000.00, '2026-01-08', 3, 'Marketing'),
+  ('James Reed',  'Manager',   90000.00, '2024-06-20', 1, 'Engineering');
+
+-- Step 3: Verify data
+SELECT * FROM employees;
+
+-- Step 4: Aggregate queries
+SELECT COUNT(*) AS total_employees FROM employees;
+SELECT AVG(salary) AS avg_salary FROM employees;
+SELECT MAX(salary) AS highest, MIN(salary) AS lowest FROM employees;
+
+-- Step 5: Filter and group
+SELECT department_name, COUNT(*) AS emp_count, AVG(salary) AS avg_sal
+FROM employees
+GROUP BY department_name;
